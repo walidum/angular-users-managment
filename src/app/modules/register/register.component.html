@@ -25,6 +25,8 @@
     <mat-form-field class="input-width" appearance="fill">
       <mat-label>Password</mat-label>
       <input formControlName="password" type="password" matInput>
+      <mat-error *ngIf="group.get('password').hasError('required')">Password obligatoire</mat-error>
+      <mat-error *ngIf="group.get('password').hasError('minlength')">Min 6 chars</mat-error>
     </mat-form-field>
 
     <button [disabled]="group.invalid" (click)="send()" class="input-width" mat-raised-button color="primary">
