@@ -1,36 +1,34 @@
 <div class="main">
-    <mat-card   class="card">
-      <form [formGroup]="group" class="card">
+  <mat-card [formGroup]="group" class="card">
+    <h1>Inscription</h1>
+    <mat-form-field class="input-width" appearance="fill">
+      <mat-label>Nom</mat-label>
+      <input formControlName="lastName" matInput>
+      <mat-error>Nom obligatoire</mat-error>
+    </mat-form-field>
+    <mat-form-field class="input-width" appearance="fill">
+      <mat-label>Prénom</mat-label>
+      <input formControlName="firstName" matInput>
+    </mat-form-field>
+    <mat-form-field class="input-width" appearance="fill">
+      <mat-label>Type</mat-label>
+      <mat-select formControlName="type">
+        <mat-option *ngFor="let type of types" [value]="type.value">
+          {{type.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="input-width" appearance="fill">
+      <mat-label>E-mail</mat-label>
+      <input formControlName="email" matInput>
+    </mat-form-field>
+    <mat-form-field class="input-width" appearance="fill">
+      <mat-label>Password</mat-label>
+      <input formControlName="password" type="password" matInput>
+    </mat-form-field>
 
-
-      <h1>Inscription</h1>
-      <mat-form-field class="input-width" appearance="fill">
-        <mat-label>Nom</mat-label>
-        <input formControlName="lastName" matInput>
-      </mat-form-field>
-      <mat-form-field class="input-width" appearance="fill">
-        <mat-label>Prénom</mat-label>
-        <input formControlName="firstName" matInput>
-      </mat-form-field>
-      <mat-form-field class="input-width" appearance="fill">
-        <mat-label>Type</mat-label>
-        <mat-select formControlName="type" >
-          <mat-option *ngFor="let type of types" [value]="type.value">
-            {{type.viewValue}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-      <mat-form-field class="input-width" appearance="fill">
-        <mat-label>E-mail</mat-label>
-        <input formControlName="email"  matInput>
-      </mat-form-field>
-      <mat-form-field class="input-width" appearance="fill">
-        <mat-label>Password</mat-label>
-        <input formControlName="password" type="password" matInput>
-      </mat-form-field>
-
-      <button [disabled]="group.invalid" (click)="send()" class="input-width" mat-raised-button color="primary">Envoyer</button>
-      </form>
-
-    </mat-card>
+    <button [disabled]="group.invalid" (click)="send()" class="input-width" mat-raised-button color="primary">
+      Envoyer
+    </button>
+  </mat-card>
 </div>
