@@ -17,6 +17,8 @@ import {HttpClientModule} from '@angular/common/http';
 import {NgxSpinnerModule} from 'ngx-spinner';
 import {UserDetailsComponent} from './modules/user-details/user-details.component';
 import {MatIconModule} from '@angular/material/icon';
+import {AppRoutingModule} from './app-routing.module';
+import {RouterModule} from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import {MatIconModule} from '@angular/material/icon';
     MatButtonModule,
     HttpClientModule,
     NgxSpinnerModule,
-    MatIconModule
+    MatIconModule,
+    AppRoutingModule,
+    RouterModule
   ],
   providers: [NgxSpinnerModule],
   bootstrap: [AppComponent]
