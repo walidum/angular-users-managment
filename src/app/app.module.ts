@@ -45,7 +45,7 @@ import {RouterModule} from '@angular/router';
     AppRoutingModule,
     RouterModule
   ],
-  providers: [NgxSpinnerModule],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {
