@@ -14,6 +14,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatButtonModule} from '@angular/material/button';
 import {UsersComponent} from './modules/users/users.component';
 import {HttpClientModule} from '@angular/common/http';
+import {NgxSpinnerModule} from 'ngx-spinner';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import {HttpClientModule} from '@angular/common/http';
     MatOptionModule,
     MatSelectModule,
     MatButtonModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

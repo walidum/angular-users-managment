@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {UsersService} from '../../services/users.service';
+import {NgxSpinnerService} from 'ngx-spinner';
 
 @Component({
   selector: 'app-users',
@@ -9,7 +10,8 @@ import {UsersService} from '../../services/users.service';
 export class UsersComponent implements OnInit {
   users = [];
 
-  constructor(private service: UsersService) {
+  constructor(private service: UsersService,
+              private spinner: NgxSpinnerService) {
   }
 
   ngOnInit(): void {
@@ -17,11 +19,13 @@ export class UsersComponent implements OnInit {
   }
 
   loadUsers = () => {
+    this.spinner.show();
     this.service.users().subscribe((users: any) => {
       console.log(users);
       this.users = users;
+      this.spinner.hide();
     }, error => {
-
+      this.spinner.hide();
     });
   };
 
