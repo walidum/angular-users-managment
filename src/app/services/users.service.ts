@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import {User} from '../models/user.model';
 
 const API_URI = 'https://jsonplaceholder.typicode.com/';
 
@@ -12,6 +13,6 @@ export class UsersService {
   }
 
   users = () => {
-    return this.http.get<any>(API_URI + 'users');
+    return this.http.get<User[]>(API_URI + 'users');
   };
 }

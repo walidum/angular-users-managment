@@ -37,7 +37,7 @@ import {NgxSpinnerModule} from 'ngx-spinner';
     HttpClientModule,
     NgxSpinnerModule
   ],
-  providers: [],
+  providers: [NgxSpinnerModule],
   bootstrap: [AppComponent]
 })
 export class AppModule {

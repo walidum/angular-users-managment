@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {UsersService} from '../../services/users.service';
 import {NgxSpinnerService} from 'ngx-spinner';
+import {User} from '../../models/user.model';
 
 @Component({
   selector: 'app-users',
@@ -8,7 +9,7 @@ import {NgxSpinnerService} from 'ngx-spinner';
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
-  users = [];
+  users: User[] = [];
 
   constructor(private service: UsersService,
               private spinner: NgxSpinnerService) {
@@ -20,7 +21,7 @@ export class UsersComponent implements OnInit {
 
   loadUsers = () => {
     this.spinner.show();
-    this.service.users().subscribe((users: any) => {
+    this.service.users().subscribe((users: User[]) => {
       console.log(users);
       this.users = users;
       this.spinner.hide();
