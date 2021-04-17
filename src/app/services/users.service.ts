@@ -9,7 +9,7 @@ const API_URI = 'https://jsonplaceholder.typicode.com/';
   providedIn: 'root'
 })
 export class UsersService {
-  user = new BehaviorSubject<User>(new User());
+  user = new BehaviorSubject<User>(null);
 
   constructor(private http: HttpClient) {
   }
