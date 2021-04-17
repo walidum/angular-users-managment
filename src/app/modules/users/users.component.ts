@@ -29,5 +29,8 @@ export class UsersComponent implements OnInit {
       this.spinner.hide();
     });
   };
+  goedit = (user: User) => {
+    this.service.user.next(user);
+  };
 
 }

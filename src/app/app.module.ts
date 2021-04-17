@@ -15,13 +15,16 @@ import {MatButtonModule} from '@angular/material/button';
 import {UsersComponent} from './modules/users/users.component';
 import {HttpClientModule} from '@angular/common/http';
 import {NgxSpinnerModule} from 'ngx-spinner';
+import {UserDetailsComponent} from './modules/user-details/user-details.component';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
     LoginComponent,
-    UsersComponent
+    UsersComponent,
+    UserDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +38,8 @@ import {NgxSpinnerModule} from 'ngx-spinner';
     MatSelectModule,
     MatButtonModule,
     HttpClientModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    MatIconModule
   ],
   providers: [NgxSpinnerModule],
   bootstrap: [AppComponent]

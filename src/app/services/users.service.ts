@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {User} from '../models/user.model';
+import {BehaviorSubject, Observable} from 'rxjs';
 
 const API_URI = 'https://jsonplaceholder.typicode.com/';
 
@@ -8,11 +9,13 @@ const API_URI = 'https://jsonplaceholder.typicode.com/';
   providedIn: 'root'
 })
 export class UsersService {
+  user = new BehaviorSubject<User>(new User());
 
   constructor(private http: HttpClient) {
   }
 
-  users = () => {
+  users = (): Observable<User[]> => {
     return this.http.get<User[]>(API_URI + 'users');
   };
+
 }
