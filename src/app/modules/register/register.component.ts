@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {NgxSpinnerService} from 'ngx-spinner';
 import {UsersService} from '../../services/users.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-register',
@@ -31,14 +32,22 @@ export class RegisterComponent implements OnInit {
   }
 
   send = () => {
-    const user = {};
+    const user = {
+      firstname: this.group.get('firstName').value,
+      lastname: this.group.get('lastName').value,
+      email: this.group.get('email').value,
+      password: this.group.get('password').value,
+      category: this.group.get('type').value
+    };
+    console.log(user);
     this.spinner.show();
     this.service.register(user).subscribe(res => {
-
+      Swal.fire('', '', 'success');
       this.spinner.hide();
     }, error => {
       this.spinner.hide();
       console.log(error);
+      Swal.fire('ERROR', '', 'error');
     });
 
   };
