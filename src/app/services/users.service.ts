@@ -21,4 +21,7 @@ export class UsersService {
   register = (user: User) => {
     return this.http.post<User>(API_LOCAL + 'register', user);
   };
+  login = (params: any) => {
+    return this.http.post(API_LOCAL + 'login', params);
+  };
 }
