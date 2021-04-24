@@ -3,6 +3,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {UsersService} from '../../services/users.service';
 import {NgxSpinnerService} from 'ngx-spinner';
 import Swal from 'sweetalert2';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -14,6 +15,7 @@ export class LoginComponent implements OnInit {
 
   constructor(private fb: FormBuilder,
               private spinner: NgxSpinnerService,
+              private router: Router,
               private service: UsersService) {
   }
 
@@ -31,7 +33,7 @@ export class LoginComponent implements OnInit {
       if (!res.token) {
         Swal.fire(res.msg, '', 'error');
       } else {
-        Swal.fire('', '', 'success');
+        this.router.navigate(['users']);
       }
       this.spinner.hide();
     }, error => {
