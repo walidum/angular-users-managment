@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import Swal from 'sweetalert2';
+import {NgxSpinnerService} from 'ngx-spinner';
+import {UsersService} from '../../services/users.service';
 
 @Component({
   selector: 'app-register',
@@ -21,17 +22,25 @@ export class RegisterComponent implements OnInit {
     password: new FormControl('', [Validators.required, Validators.minLength(6)])
   });
 
-  constructor() {
+  constructor(private spinner: NgxSpinnerService,
+              private service: UsersService
+  ) {
   }
 
   ngOnInit(): void {
   }
 
   send = () => {
-    if (this.group.get('firstName').invalid) {
-      Swal.fire('Prénom invalide ', '', 'error');
-      return;
-    }
+    const user = {};
+    this.spinner.show();
+    this.service.register(user).subscribe(res => {
+
+      this.spinner.hide();
+    }, error => {
+      this.spinner.hide();
+      console.log(error);
+    });
 
   };
+
 }

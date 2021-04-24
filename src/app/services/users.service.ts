@@ -4,6 +4,7 @@ import {User} from '../models/user.model';
 import {BehaviorSubject, Observable} from 'rxjs';
 
 const API_URI = 'https://jsonplaceholder.typicode.com/';
+const API_LOCAL = 'http://localhost:3001/';
 
 @Injectable({
   providedIn: 'root'
@@ -17,5 +18,7 @@ export class UsersService {
   users = (): Observable<User[]> => {
     return this.http.get<User[]>(API_URI + 'users');
   };
-
+  register = (params: any) => {
+    return this.http.post(API_LOCAL + 'register', params);
+  };
 }
