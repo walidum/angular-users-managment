@@ -19,16 +19,16 @@
     </mat-card>
     <mat-card *ngFor="let user of users" class="line">
       <div class="item">
-        <span>{{user.name}}</span>
+        <span>{{user.firstname}}</span>
+      </div>
+      <div class="item">
+        <span>{{user.lastname}}</span>
       </div>
       <div class="item">
         <span>{{user.email}}</span>
       </div>
       <div class="item">
-        <span>{{user.address.city}}--{{user.address.street}}</span>
-      </div>
-      <div class="item">
-        <span>{{user.website}}</span>
+        <span>{{user.category}}</span>
       </div>
       <div (click)="goedit(user)" style="cursor: pointer" class="item">
         <mat-icon>edit</mat-icon>
