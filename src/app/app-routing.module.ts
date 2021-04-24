@@ -4,6 +4,7 @@ import {CommonModule} from '@angular/common';
 import {UsersComponent} from './modules/users/users.component';
 import {UserDetailsComponent} from './modules/user-details/user-details.component';
 import {RegisterComponent} from './modules/register/register.component';
+import {LoginComponent} from './modules/login/login.component';
 
 const routes: Routes = [
   {
@@ -13,6 +14,7 @@ const routes: Routes = [
   },
   {path: 'users', component: UsersComponent},
   {path: 'register', component: RegisterComponent},
+  {path: 'login', component: LoginComponent},
   {path: 'users-detais', component: UserDetailsComponent},
   {path: '**', redirectTo: '/users'}
 
