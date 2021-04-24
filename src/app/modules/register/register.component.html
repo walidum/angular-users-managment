@@ -3,16 +3,16 @@
     <h1>Inscription</h1>
     <mat-form-field class="input-width" appearance="fill">
       <mat-label>Nom</mat-label>
-      <input formControlName="lastName" matInput>
+      <input formControlName="lastname" matInput>
       <mat-error>Nom obligatoire</mat-error>
     </mat-form-field>
     <mat-form-field class="input-width" appearance="fill">
       <mat-label>Prénom</mat-label>
-      <input formControlName="firstName" matInput>
+      <input formControlName="firstname" matInput>
     </mat-form-field>
     <mat-form-field class="input-width" appearance="fill">
       <mat-label>Type</mat-label>
-      <mat-select formControlName="type">
+      <mat-select formControlName="category">
         <mat-option *ngFor="let type of types" [value]="type.value">
           {{type.viewValue}}
         </mat-option>

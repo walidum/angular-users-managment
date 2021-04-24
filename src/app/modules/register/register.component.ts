@@ -16,9 +16,9 @@ export class RegisterComponent implements OnInit {
     {value: 'COMMERCANT', viewValue: 'Commerçant'}
   ];
   group = new FormGroup({
-    firstName: new FormControl('', [Validators.required]),
-    lastName: new FormControl('', [Validators.required]),
-    type: new FormControl('', [Validators.required]),
+    firstname: new FormControl('', [Validators.required]),
+    lastname: new FormControl('', [Validators.required]),
+    category: new FormControl('', [Validators.required]),
     email: new FormControl('', [Validators.required, Validators.pattern(this.EXP)]),
     password: new FormControl('', [Validators.required, Validators.minLength(6)])
   });
@@ -32,16 +32,8 @@ export class RegisterComponent implements OnInit {
   }
 
   send = () => {
-    const user = {
-      firstname: this.group.get('firstName').value,
-      lastname: this.group.get('lastName').value,
-      email: this.group.get('email').value,
-      password: this.group.get('password').value,
-      category: this.group.get('type').value
-    };
-    console.log(user);
     this.spinner.show();
-    this.service.register(user).subscribe(res => {
+    this.service.register(this.group.value).subscribe(res => {
       Swal.fire('', '', 'success');
       this.spinner.hide();
     }, error => {

@@ -18,7 +18,7 @@ export class UsersService {
   users = (): Observable<User[]> => {
     return this.http.get<User[]>(API_LOCAL + 'users');
   };
-  register = (params: any) => {
-    return this.http.post(API_LOCAL + 'register', params);
+  register = (user: User) => {
+    return this.http.post<User>(API_LOCAL + 'register', user);
   };
 }
