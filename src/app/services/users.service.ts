@@ -17,6 +17,15 @@ export class UsersService {
     this.conrext = new BehaviorSubject<any>(JSON.parse(localStorage.getItem('user')));
   }
 
+  public get currentUserValue(): any {
+    return this.conrext.value;
+  }
+
+  logout = () => {
+    this.conrext.next(null);
+    localStorage.setItem('user', JSON.stringify({}));
+  };
+
   users = (): Observable<User[]> => {
     return this.http.get<User[]>(API_LOCAL + 'users');
   };

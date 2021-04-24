@@ -40,5 +40,8 @@ export class UsersComponent implements OnInit {
     this.service.user.next(user);
     this.router.navigate(['/users-detais']);
   };
-
+  logout = () => {
+    this.service.logout();
+    this.router.navigate(['login']);
+  };
 }
