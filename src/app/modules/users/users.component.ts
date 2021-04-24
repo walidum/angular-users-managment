@@ -12,9 +12,14 @@ import {Router} from '@angular/router';
 export class UsersComponent implements OnInit {
   users: User[] = [];
 
+  context: any;
+
   constructor(private service: UsersService,
               private router: Router,
               private spinner: NgxSpinnerService) {
+    this.service.conrext.asObservable().subscribe((context: any) => {
+      this.context = context;
+    });
   }
 
   ngOnInit(): void {

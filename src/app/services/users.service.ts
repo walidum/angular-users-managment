@@ -11,8 +11,10 @@ const API_LOCAL = 'http://localhost:3001/';
 })
 export class UsersService {
   user = new BehaviorSubject<User>(null);
+  conrext: BehaviorSubject<any>;
 
   constructor(private http: HttpClient) {
+    this.conrext = new BehaviorSubject<any>(JSON.parse(localStorage.getItem('user')));
   }
 
   users = (): Observable<User[]> => {

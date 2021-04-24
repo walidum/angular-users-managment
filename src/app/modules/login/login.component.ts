@@ -33,6 +33,8 @@ export class LoginComponent implements OnInit {
       if (!res.token) {
         Swal.fire(res.msg, '', 'error');
       } else {
+        localStorage.setItem('user', JSON.stringify(res));
+        this.service.conrext.next(res);
         this.router.navigate(['users']);
       }
       this.spinner.hide();
