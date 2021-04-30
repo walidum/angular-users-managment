@@ -4,7 +4,7 @@ import {User} from '../models/user.model';
 import {BehaviorSubject, Observable} from 'rxjs';
 
 const API_URI = 'https://jsonplaceholder.typicode.com/';
-const API_LOCAL = 'http://localhost:3001/';
+const API_LOCAL = 'https://login-register-node-apis.herokuapp.com/';
 
 @Injectable({
   providedIn: 'root'
