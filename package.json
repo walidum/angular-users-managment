@@ -3,11 +3,16 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "start": "node server.js",
+    "heroku-postbuild": "ng build --prod"
+  },
+  "engines": {
+    "node": "14.15.3",
+    "npm": "6.14.9"
   },
   "private": true,
   "dependencies": {
@@ -21,7 +26,9 @@
     "@angular/platform-browser": "~11.2.9",
     "@angular/platform-browser-dynamic": "~11.2.9",
     "@angular/router": "^11.2.10",
+    "express": "^4.17.1",
     "ngx-spinner": "^11.0.1",
+    "path": "^0.12.7",
     "rxjs": "~6.6.0",
     "sweetalert2": "^10.16.0",
     "tslib": "^2.0.0",
