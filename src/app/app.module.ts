@@ -13,12 +13,13 @@ import {MatOptionModule} from '@angular/material/core';
 import {MatSelectModule} from '@angular/material/select';
 import {MatButtonModule} from '@angular/material/button';
 import {UsersComponent} from './modules/users/users.component';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {NgxSpinnerModule} from 'ngx-spinner';
 import {UserDetailsComponent} from './modules/user-details/user-details.component';
 import {MatIconModule} from '@angular/material/icon';
 import {AppRoutingModule} from './app-routing.module';
 import {RouterModule} from '@angular/router';
+import {JwtInterceptor} from './helpers/jwt.interceptor';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,9 @@ import {RouterModule} from '@angular/router';
     AppRoutingModule,
     RouterModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
