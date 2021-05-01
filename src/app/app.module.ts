@@ -20,6 +20,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {AppRoutingModule} from './app-routing.module';
 import {RouterModule} from '@angular/router';
 import {JwtInterceptor} from './helpers/jwt.interceptor';
+import {ErrorInterceptor} from "./helpers/error.interceptor";
 
 @NgModule({
   declarations: [
@@ -48,6 +49,8 @@ import {JwtInterceptor} from './helpers/jwt.interceptor';
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
+
   ],
   bootstrap: [AppComponent]
 })
