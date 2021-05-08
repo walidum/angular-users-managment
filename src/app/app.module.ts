@@ -21,7 +21,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {RouterModule} from '@angular/router';
 import {JwtInterceptor} from './helpers/jwt.interceptor';
 import {ErrorInterceptor} from "./helpers/error.interceptor";
-import { DemoAnimationComponent } from './modules/demo-animation/demo-animation.component';
+import {DemoAnimationComponent} from './modules/demo-animation/demo-animation.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +30,7 @@ import { DemoAnimationComponent } from './modules/demo-animation/demo-animation.
     LoginComponent,
     UsersComponent,
     UserDetailsComponent,
-    DemoAnimationComponent
+    DemoAnimationComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,8 +50,8 @@ import { DemoAnimationComponent } from './modules/demo-animation/demo-animation.
     RouterModule
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
+    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},
+    {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true}
 
   ],
   bootstrap: [AppComponent]
