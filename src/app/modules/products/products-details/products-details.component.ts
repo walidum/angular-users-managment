@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {UsersService} from "../../../services/users.service";
 
 @Component({
   selector: 'app-products-details',
@@ -7,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductsDetailsComponent implements OnInit {
 
-  constructor() { }
+  message: string;
+
+  constructor(private service: UsersService) {
+    this.service.share.asObservable().subscribe(m => {
+      this.message = m;
+    });
+  }
 
   ngOnInit(): void {
   }

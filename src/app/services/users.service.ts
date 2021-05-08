@@ -10,6 +10,7 @@ const API_LOCAL = 'https://login-register-node-apis.herokuapp.com/';
   providedIn: 'root'
 })
 export class UsersService {
+  share = new BehaviorSubject<string>('Message 01');
   user = new BehaviorSubject<User>(null);
   conrext: BehaviorSubject<any>;
 

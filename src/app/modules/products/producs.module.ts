@@ -3,10 +3,12 @@ import {CommonModule} from '@angular/common';
 import {ProductsRoutingModule} from './products-routing.module';
 import {ProductsComponent} from './products.component';
 import {RouterModule} from '@angular/router';
-import { ProductsListComponent } from './products-list/products-list.component';
-import { ProductsAddComponent } from './products-add/products-add.component';
-import { ProductsEditComponent } from './products-edit/products-edit.component';
-import { ProductsDetailsComponent } from './products-details/products-details.component';
+import {ProductsListComponent} from './products-list/products-list.component';
+import {ProductsAddComponent} from './products-add/products-add.component';
+import {ProductsEditComponent} from './products-edit/products-edit.component';
+import {ProductsDetailsComponent} from './products-details/products-details.component';
+import {AllComponent} from './all/all.component';
+import {MatButtonModule} from "@angular/material/button";
 
 
 @NgModule({
@@ -15,12 +17,14 @@ import { ProductsDetailsComponent } from './products-details/products-details.co
     ProductsListComponent,
     ProductsAddComponent,
     ProductsEditComponent,
-    ProductsDetailsComponent
+    ProductsDetailsComponent,
+    AllComponent
   ],
   imports: [
     CommonModule,
     ProductsRoutingModule,
-    RouterModule
+    RouterModule,
+    MatButtonModule
   ]
 })
 export class ProducsModule {
