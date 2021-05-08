@@ -6,7 +6,7 @@ import {UserDetailsComponent} from './modules/user-details/user-details.componen
 import {RegisterComponent} from './modules/register/register.component';
 import {LoginComponent} from './modules/login/login.component';
 import {AuthGuard} from './helpers/auth.guard';
-import {DemoAnimationComponent} from "./modules/demo-animation/demo-animation.component";
+import {DemoAnimationComponent} from './modules/demo-animation/demo-animation.component';
 
 const routes: Routes = [
   {
@@ -19,6 +19,7 @@ const routes: Routes = [
   {path: 'animation', component: DemoAnimationComponent},
   {path: 'login', component: LoginComponent},
   {path: 'users-detais', component: UserDetailsComponent},
+  {path: 'product', loadChildren: () => import('./modules/products/producs.module').then(m => m.ProducsModule)},
   {path: '**', redirectTo: '/users'}
 
 ];

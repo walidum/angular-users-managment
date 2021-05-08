@@ -11,15 +11,14 @@ const routes: Routes = [
     path: '',
     component: ProductsComponent,
     children: [
-      {path: 'add-products', component: ProductsAddComponent},
-      {path: 'edit-products', component: ProductsEditComponent},
-      {path: 'list-products', component: ProductsListComponent},
-      {path: 'details-products', component: ProductsDetailsComponent},
+      {path: 'add', component: ProductsAddComponent},
+      {path: 'edit', component: ProductsEditComponent},
+      {path: 'list', component: ProductsListComponent},
+      {path: 'details', component: ProductsDetailsComponent},
     ]
   }
 ];
 
-//      {path: '', loadChildren: () => import('./drivers/drivers.module').then(m => m.DriversModule)},
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
