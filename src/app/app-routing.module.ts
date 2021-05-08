@@ -6,15 +6,17 @@ import {UserDetailsComponent} from './modules/user-details/user-details.componen
 import {RegisterComponent} from './modules/register/register.component';
 import {LoginComponent} from './modules/login/login.component';
 import {AuthGuard} from './helpers/auth.guard';
+import {DemoAnimationComponent} from "./modules/demo-animation/demo-animation.component";
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'users',
+    redirectTo: 'animation',
     pathMatch: 'full'
   },
   {path: 'users', component: UsersComponent, canActivate: [AuthGuard]},
   {path: 'register', component: RegisterComponent},
+  {path: 'animation', component: DemoAnimationComponent},
   {path: 'login', component: LoginComponent},
   {path: 'users-detais', component: UserDetailsComponent},
   {path: '**', redirectTo: '/users'}

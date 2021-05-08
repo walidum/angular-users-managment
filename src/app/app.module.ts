@@ -21,6 +21,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {RouterModule} from '@angular/router';
 import {JwtInterceptor} from './helpers/jwt.interceptor';
 import {ErrorInterceptor} from "./helpers/error.interceptor";
+import { DemoAnimationComponent } from './modules/demo-animation/demo-animation.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import {ErrorInterceptor} from "./helpers/error.interceptor";
     RegisterComponent,
     LoginComponent,
     UsersComponent,
-    UserDetailsComponent
+    UserDetailsComponent,
+    DemoAnimationComponent
   ],
   imports: [
     BrowserModule,
