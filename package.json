@@ -8,6 +8,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "start": "node server.js",
+    "ngserve": "ng serve",
     "heroku-postbuild": "ng build --prod"
   },
   "engines": {

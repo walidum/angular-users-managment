@@ -46,3 +46,8 @@
 .line .item span {
   color: black;
 }
+.header{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}

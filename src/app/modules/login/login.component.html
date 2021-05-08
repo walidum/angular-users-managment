@@ -14,8 +14,7 @@
       <mat-error *ngIf="group.get('password').hasError('minlength')">Min 6 chars</mat-error>
     </mat-form-field>
 
-    <button (click)="send()" class="input-width" mat-raised-button color="primary">
-      Envoyer
-    </button>
+    <button (click)="send()" class="input-width" mat-raised-button color="primary">Login</button>
+    <button routerLink="/register" style="margin-top: .5rem" class="input-width" mat-raised-button color="primary">Register</button>
   </mat-card>
 </div>
