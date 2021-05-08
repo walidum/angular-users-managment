@@ -1,6 +1,10 @@
 <h1>Angular animations </h1>
+
+<h2 (click)="choose('open')">Open</h2>
+<h2 (click)="choose('closed')">Closed</h2>
+<h2 (click)="choose('end')">End</h2>
 <div class="open-close-container"
-     [@openClose]="isOpen? 'open':'closed'" (click)="toggle()">
+     [@openClose]="current">
 
 </div>
 

@@ -17,19 +17,29 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
         opacity: 0.5,
         backgroundColor: 'green'
       })),
+      state('end', style({
+        height: '100px',
+        opacity: 0.5,
+        backgroundColor: 'blue'
+      })),
       transition('open -> closed', [
+        animate('1s')
+      ]),
+      transition('open -> end', [
         animate('1s')
       ]),
       transition('closed -> open', [
         animate('0.5s')
-      ])
+      ]),
+
     ])
   ]
 
 })
 
 export class DemoAnimationComponent implements OnInit {
-  isOpen = true
+  isOpen = true;
+  current = 'open'
 
   constructor() {
   }
@@ -39,5 +49,18 @@ export class DemoAnimationComponent implements OnInit {
 
   toggle = () => {
     this.isOpen = !this.isOpen
+  }
+  choose = (s: string) => {
+    switch (s) {
+      case 'open':
+        this.current = 'open'
+        break;
+      case 'closed':
+        this.current = 'closed';
+        break;
+      case 'end' :
+        this.current = 'end';
+        break;
+    }
   }
 }
